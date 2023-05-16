@@ -1,7 +1,7 @@
 version: '2.3'
 services:
   mongo:
-    image: mongo:3.6
+    image: mongo:4.2
     container_name: ${COMPOSE_PROJECT_NAME}_mongo
     networks:
       - unifi
@@ -19,11 +19,11 @@ services:
       - unifi
     restart: always
     volumes:
-      - dir:/unifi
-      - data:/unifi/data
-      - log:/unifi/log
-      - cert:/unifi/cert
-      - init:/unifi/init.d
+      - dir:/config/unifi
+      - data:/config/unifi/data
+      - log:/config/unifi/log
+      - cert:/config/unifi/cert
+      - init:/config/unifi/init.d
       - run:/var/run/unifi
       # Mount local folder for backups and autobackups
       - ./backup:/unifi/data/backup
@@ -47,10 +47,10 @@ services:
     container_name: ${COMPOSE_PROJECT_NAME}_logs
     depends_on:
       - controller
-    command: bash -c 'tail -F /unifi/log/*.log'
+    command: bash -c 'tail -F /config/unifi/log/*.log'
     restart: always
     volumes:
-      - log:/unifi/log
+      - log:/config/unifi/log
 
 volumes:
   db:

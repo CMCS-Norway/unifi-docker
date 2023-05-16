@@ -13,10 +13,10 @@ ARG DEBIAN_FRONTEND=noninteractive
 ARG PKGURL=https://dl.ui.com/unifi/7.3.83/unifi_sysvinit_all.deb
 
 ENV BASEDIR=/usr/lib/unifi \
-    DATADIR=/config/unifi/data \
-    LOGDIR=/config/unifi/log \
-    CERTDIR=/config/unifi/cert \
-    RUNDIR=/config/unifi/run \
+    DATADIR=/unifi/data \
+    LOGDIR=/unifi/log \
+    CERTDIR=/unifi/cert \
+    RUNDIR=/unifi/run \
     ORUNDIR=/var/run/unifi \
     ODATADIR=/var/lib/unifi \
     OLOGDIR=/var/log/unifi \

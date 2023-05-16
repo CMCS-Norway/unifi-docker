@@ -50,7 +50,7 @@ fi
 curl -L -o ./unifi.deb "${1}"
 apt -qy install ./unifi.deb
 rm -f ./unifi.deb
-chown -R unifi:unifi /usr/lib/unifi
+chown -R config/unifi:unifi /usr/lib/unifi
 rm -rf /var/lib/apt/lists/*
 
 rm -rf ${ODATADIR} ${OLOGDIR} ${ORUNDIR} ${BASEDIR}/data ${BASEDIR}/run ${BASEDIR}/logs
